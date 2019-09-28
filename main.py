@@ -2,7 +2,6 @@
 
 import nltk
 import json
-import research_toolbox.tb_counting as tb_cnt
 
 # download resources needed.
 nltk.download('punkt', quiet=True)
@@ -317,7 +316,7 @@ def get_frequent_long_words(ps, len_thres, count_thres, top_k):
                         w2c[w] = 0
                     w2c[w] += 1
     w2c = {k: v for k, v in w2c.iteritems() if v >= count_thres}
-    return tb_cnt.topk(w2c, top_k)
+    return topk(w2c, top_k)
 
 
 # # NOTE: the API design needs to be revised.
